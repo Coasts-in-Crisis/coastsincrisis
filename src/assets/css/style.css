@@ -1,6 +1,23 @@
+/* =============================================================
+   Coasts in Crisis — global stylesheet
+   -------------------------------------------------------------
+   1. Custom properties & reset
+   2. Base typography & links
+   3. Layout: header & footer
+   4. Shared components (page header, nav buttons, curator box)
+   5. Homepage: interactive hurricane-path map
+   6. Info pages: About, Resources, People
+   7. Pathway pages: Entangled Ecologies, Predictable Precarity,
+      Creative Resistance
+   8. Responsive overrides
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   1. Custom properties & reset
+   ------------------------------------------------------------- */
+
 :root {
   --teal: #008080;
-  --teal-dark: #006666;
   --ink: #333;
   --muted: #a0a0a0;
   --pill-bg: #d9d9d9;
@@ -11,6 +28,10 @@
 * {
   box-sizing: border-box;
 }
+
+/* -------------------------------------------------------------
+   2. Base typography & links
+   ------------------------------------------------------------- */
 
 body {
   margin: 0;
@@ -43,7 +64,9 @@ p > a:hover,
   color: var(--pill-bg);
 }
 
-/* Header */
+/* -------------------------------------------------------------
+   3. Layout: header & footer
+   ------------------------------------------------------------- */
 
 .site-header {
   padding: 1.5rem 1rem 0.5rem;
@@ -82,7 +105,16 @@ p > a:hover,
   text-decoration: underline;
 }
 
-/* Page header */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+/* -------------------------------------------------------------
+   4. Shared components
+   ------------------------------------------------------------- */
 
 .page-header {
   text-align: center;
@@ -94,7 +126,36 @@ p > a:hover,
   margin: 0 auto 1rem;
 }
 
-/* Hero / interactive map */
+.button-nav {
+  display: inline-block;
+  background-color: var(--teal);
+  color: #e7e7e7;
+  padding: 0.6em 1.3em;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.button-nav:hover,
+.button-nav:active {
+  background-color: var(--muted);
+  color: #e7e7e7;
+}
+
+/* curator statement box: translucent gray card used across the
+   homepage, info pages, and pathway pages */
+.curator-msg {
+  max-width: 42em;
+  margin: 2rem auto 4rem;
+  padding: 1.5em 2em;
+  line-height: 1.6;
+  background-color: rgba(217, 217, 217, 0.7);
+}
+
+/* -------------------------------------------------------------
+   5. Homepage: interactive hurricane-path map
+   ------------------------------------------------------------- */
 
 .hero {
   position: relative;
@@ -194,44 +255,24 @@ p > a:hover,
   right: 4%;
 }
 
+/* between the yellow-line icon (54.17%) and the magenta/yellow crossing
+   point (71%), nudged up from the midpoint */
 .pathway--predictable a {
-  top: 46%;
+  top: 58.4%;
   right: 12%;
 }
 
+/* left of and slightly higher than the magenta-line icon (22.6%, 29.25%),
+   so the two aren't symmetrically aligned — left is set so the button's
+   own center lands left of the icon, not just its edge */
 .pathway--creative a {
-  top: 78%;
-  left: 6%;
+  top: 20.8%;
+  left: 6.3%;
 }
 
-.button-nav {
-  display: inline-block;
-  background-color: var(--teal);
-  color: #e7e7e7;
-  padding: 0.6em 1.3em;
-  text-decoration: none;
-  font-size: 1rem;
-  border-radius: 50px;
-  white-space: nowrap;
-}
-
-.button-nav:hover,
-.button-nav:active {
-  background-color: var(--muted);
-  color: #e7e7e7;
-}
-
-/* Curator message */
-
-.curator-msg {
-  max-width: 42em;
-  margin: 2rem auto 4rem;
-  padding: 1.5em 2em;
-  line-height: 1.6;
-  background-color: rgba(217, 217, 217, 0.7);
-}
-
-/* Info pages: About, Resources, People */
+/* -------------------------------------------------------------
+   6. Info pages: About, Resources, People
+   ------------------------------------------------------------- */
 
 .page-content {
   max-width: 50em;
@@ -294,27 +335,214 @@ p > a:hover,
   text-align: justify;
 }
 
-@media (max-width: 640px) {
-  .person {
-    flex-direction: column;
-  }
+/* -------------------------------------------------------------
+   7. Pathway pages
+   ------------------------------------------------------------- */
 
-  .portrait,
-  .portrait--team {
-    height: auto;
-    width: 60%;
-    margin: 0 auto;
-  }
+.pathway-content {
+  max-width: 62em;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+  overflow: hidden;
 }
 
-/* Footer */
+.pathway-content figure {
+  margin: 1.5em 0;
+}
 
-.site-footer {
+.pathway-content figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.25em;
+}
+
+.pathway-content figcaption {
+  margin-top: 0.5em;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #666;
+}
+
+.align-left {
+  float: left;
+  width: 45%;
+  margin: 0 2em 1.5em 0;
+}
+
+.align-right {
+  float: right;
+  width: 45%;
+  margin: 0 0 1.5em 2em;
+}
+
+.curator-msg.float-left {
+  float: left;
+  max-width: 22em;
+  margin: 0 2em 1.5em 0;
+}
+
+.curator-msg.float-right {
+  float: right;
+  max-width: 24em;
+  margin: 0 0 1.5em 2em;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.video-embed {
+  max-width: 560px;
+  margin: 1.5em 0;
+  clear: both;
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+/* each pathway's own hurricane-path drawing sits behind the page's
+   main content (hero image, curator text, video) as a watermark, with
+   the rotating icon positioned on the line. Image files are named by
+   pathway, not hurricane — the original theme's hurricane-name file
+   names (and the .icon-maria/.icon-jose/.icon-irma classes on the
+   homepage) don't match their actual rendered colors, so we go by
+   pathway instead. */
+.pathway-hero {
+  position: relative;
+}
+
+/* sized purely by the background image's own aspect ratio (via the
+   img's natural width/height), independent of how tall the sibling
+   .pathway-hero__content ends up being — this way the icon's percentage
+   position (below) always lines up with the same spot on the line,
+   regardless of how much text/media the page has */
+.pathway-hero__bkg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pathway-hero__bkg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pathway-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.pathway-hero__icon {
+  position: absolute;
+  z-index: 1;
+  width: 4em;
+  transform: translate(-50%, -50%);
+}
+
+.pathway-hero__icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* on the green line, mid-page */
+.pathway-hero__icon--entangled-ecologies {
+  top: 40%;
+  left: 50.4%;
+}
+
+/* on the magenta line, upper-left */
+.pathway-hero__icon--creative-resistance {
+  top: 33.3%;
+  left: 10%;
+}
+
+/* on the yellow line, upper-left */
+.pathway-hero__icon--predictable-precarity {
+  top: 33.3%;
+  left: 5.9%;
+}
+
+/* Creative Resistance pages: rounded, padded figures with centered captions */
+.cr-page figure img {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.cr-page figcaption {
   text-align: center;
-  padding: 2rem 1rem;
-  color: var(--ink);
-  font-size: 0.9rem;
 }
+
+/* Predictable Precarity pages: poem excerpts and Nicole Delgado's boarding pass */
+.exhibit-text {
+  font-family: Courier, monospace;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.poem-title {
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding: 0.5em 0;
+}
+
+.boardingpass {
+  display: block;
+  width: 45em;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin: 1.5em 0;
+}
+
+.spiral-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  clear: both;
+  margin: 3em 0 2em;
+}
+
+.button-left,
+.button-right {
+  background-color: var(--teal);
+  color: #e7e7e7;
+  padding: 10px 21px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+}
+
+.button-left:hover,
+.button-right:hover {
+  background-color: var(--muted);
+  color: #e7e7e7;
+}
+
+/* -------------------------------------------------------------
+   8. Responsive overrides
+   ------------------------------------------------------------- */
 
 @media (max-width: 640px) {
   .site-header__inner {
@@ -330,6 +558,27 @@ p > a:hover,
   /* scale hurricane icons down 10% on mobile */
   .hurricane-icon {
     width: 4.5em;
+  }
+
+  .person {
+    flex-direction: column;
+  }
+
+  .portrait,
+  .portrait--team {
+    height: auto;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .align-left,
+  .align-right,
+  .curator-msg.float-left,
+  .curator-msg.float-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1.5em;
   }
 }
 
