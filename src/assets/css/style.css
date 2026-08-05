@@ -353,10 +353,17 @@ p > a:hover,
 
 .pathway-content figure img {
   display: block;
-  width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: 0.25em;
+}
+
+/* full-bleed figures (not floated) fill the content column; floated
+   ones (.align-left/.align-right, handled below) are excluded so their
+   width="" HTML attribute — the real size Drupal displayed — governs
+   instead of being stretched to fill the column */
+.pathway-content figure:not(.align-left):not(.align-right) img {
+  width: 100%;
 }
 
 .pathway-content figcaption {
@@ -366,15 +373,16 @@ p > a:hover,
   color: #666;
 }
 
+/* float only — no fixed width. The original never scaled these images
+   down to a percentage; they render at their real width (via each img's
+   own width/height attributes) up to the content column's max-width. */
 .align-left {
   float: left;
-  width: 45%;
   margin: 0 2em 1.5em 0;
 }
 
 .align-right {
   float: right;
-  width: 45%;
   margin: 0 0 1.5em 2em;
 }
 
@@ -406,6 +414,17 @@ p > a:hover,
   max-width: 560px;
   margin: 1.5em 0;
   clear: both;
+}
+
+/* when a video is floated (e.g. next to another right-floated element
+   like a curator box), it needs its own side margin back — otherwise
+   .video-embed's own margin rule above wins and they end up touching */
+.video-embed.align-left {
+  margin: 0 2em 1.5em 0;
+}
+
+.video-embed.align-right {
+  margin: 0 0 1.5em 2em;
 }
 
 .video-embed iframe {
