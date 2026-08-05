@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/coasts-in-crisis/"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
