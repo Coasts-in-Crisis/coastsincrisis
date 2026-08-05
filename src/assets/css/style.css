@@ -40,7 +40,7 @@ body {
   font-weight: 500;
   color: var(--ink);
   background-color: #fff;
-  background-image: url("/assets/images/map_grid.png");
+  background-image: url("../images/map_grid.png");
   background-repeat: repeat;
   background-size: 900px 450px;
 }
