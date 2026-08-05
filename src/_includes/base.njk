@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | Coasts in Crisis</title>
-  <link rel="icon" href="/assets/images/favicon.ico">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-brand" href="/">Coasts in Crisis</a>
+      <a class="site-brand" href="{{ '/' | url }}">Coasts in Crisis</a>
       <nav class="site-nav">
-        <a href="/about">About</a>
-        <a href="/resources">Resources</a>
-        <a href="/people">People</a>
+        <a href="{{ '/about' | url }}">About</a>
+        <a href="{{ '/resources' | url }}">Resources</a>
+        <a href="{{ '/people' | url }}">People</a>
       </nav>
     </div>
   </header>
