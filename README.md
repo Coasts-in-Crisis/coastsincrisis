@@ -1,3 +1,5 @@
+NOTE: This README was created by Sonnet 5.
+
 # Coasts in Crisis — rebuild notes
 
 A record of rebuilding [coastsincrisis.net](https://web.archive.org/web/20240826215207/https://coastsincrisis.net/) — a Drupal 9 digital art exhibit about Caribbean arts and cultures after the 2017 hurricane season — as a static [11ty](https://www.11ty.dev/) site, from a Drupal backup and Wayback Machine snapshots.
