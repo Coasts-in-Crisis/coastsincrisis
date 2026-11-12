@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "npx @11ty/eleventy --serve --watch",
     "build": "npx @11ty/eleventy",
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/coasts-in-crisis/"
   },
