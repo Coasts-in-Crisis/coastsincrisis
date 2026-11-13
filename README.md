@@ -7,3 +7,7 @@ Originally, this digital exhibit was developed using [Drupal](https://new.drupal
 You can still access digital snapshots of the original project through the Internet Archive's [Wayback Machine](https://web.archive.org/web/20240826215207/https://coastsincrisis.net/)
 
 Learn more visiting the project [Wiki](https://github.com/Coasts-in-Crisis/coastsincrisis/wiki)
+
+## Local development
+
+Clone this repo and use `npm start` in a command line interface.
