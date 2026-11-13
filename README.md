@@ -11,3 +11,11 @@ Learn more visiting the project [Wiki](https://github.com/Coasts-in-Crisis/coast
 ## Local development
 
 Clone this repo and use `npm start` in a command line interface.
+
+
+## Deployment
+
+The site is deployed to GitHub Pages by the [deploy workflow](.github/workflows/deploy.yaml). Every push to `main` installs dependencies (`npm ci`), builds the site with `npm run build-ghpages`, and publishes the `_site/` folder.
+
+- **Pages setting:** in the repository's Settings → Pages, make sure the source is set to "GitHub Actions". The workflow won't publish without it.
+- **Local build:** `npm run build` builds without a prefix, for checking output locally.
