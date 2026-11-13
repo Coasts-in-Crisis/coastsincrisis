@@ -12,7 +12,7 @@ Learn more visiting the project [Wiki](https://github.com/Coasts-in-Crisis/coast
 
 ## Local development
 
-Clone this repo and use `npm start` in a command line interface.
+Clone this repo and use `npm start` in a command line interface to run a local (offline) version of the site. 
 
 
 ## Deployment
